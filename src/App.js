@@ -20,12 +20,19 @@ import { useState, useEffect } from 'react';
 const App = () => {
   return (
     <div className='App'>
-          <Header/>
-      <Router>
-        <Routes>
-          <Route path='/' element={<Home/>}/>
-        </Routes>
-      </Router>
+      <Header/>
+      <Nav/>
+        <Router>
+          <Routes>
+            <Route path='/' element={<Home/>}/>
+            <Route path='/post' element={<NewPost/>}/>
+            <Route path='/*' element={<Missing/>}/>
+            <Route path='/about' element={<About/>}/>
+            <Route path='/post/:id' element={<PostPage/>}/>
+
+          </Routes>
+        </Router>
+      <Footer/>
     </div>
   )
 }
